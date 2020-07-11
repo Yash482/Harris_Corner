@@ -16,6 +16,8 @@ gray = np.float32(gray)
 #Detect corner
 dst = cv2.cornerHarris(gray, blockSize =2, ksize =3, k =0.04)
 
+#Dilate the img to see clearly the corners
+dst = cv2.dilate(dst, None)
 
 plt.imshow(dst, cmap ='gray')
 
